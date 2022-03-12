@@ -1,0 +1,76 @@
+a {
+    text-decoration: none;
+    color: #263238;
+    font-weight: 300;
+  }
+  
+  aside {
+    width: 350px;
+    height: 100vh;
+    padding: 30px 40px;
+    border-right: solid 1px var(--border);
+
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    color: #263238;
+  }
+  
+  .logo :hover {
+    color: #2096f3;
+  }
+  
+  .logo img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  aside h2 {
+    margin: 30px 0 20px 0;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #607d8b;
+    line-height: 1.5;
+  }
+  
+  aside nav {
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+    line-height: 2;
+  }
+  
+  aside nav li {
+    display: list-item;
+  }
+  
+  aside nav li a {
+    font-weight: 700;
+  }
+  
+  aside nav li a:hover {
+    color: #2096f3;
+  }
+  
+  .skill-share {
+    display: block;
+    margin-top: 20px;
+    padding-bottom: 20px;
+    font-size: 16px;
+    border-bottom: solid 1px var(--border);
+  }
+  
+  .skill-share p {
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #263238;
+  }
+  
+  .skill-share p:hover {
+    color: #2096f3
+  }
