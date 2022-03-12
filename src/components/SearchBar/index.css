@@ -5,6 +5,8 @@
   left: 350px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  right: 0;
 }
 
 .search-bar-group {
@@ -45,5 +47,33 @@
   width: 20px;
   height: 20px;
   color: #607d8b;
+}
 
+.toolbar-collection {
+  display: flex;
+  align-items: center;
+  border-right: solid 1px var(--border);
+  margin-right: 15px;
+  padding-right: 15px;
+}
+
+.toolbar-collection span {
+  margin-left: 10px;
+  font-size: 0.9rem;
+  opacity: 0.3;
+}
+
+.toolbar-download{
+    display: flex;
+    align-items: center;
+}
+
+.toolbar-download span{
+    opacity: 0.5;
+    font-size: 0.9rem;
+    margin-left: 5px;
+}
+
+ select{
+    appearance: none;
 }

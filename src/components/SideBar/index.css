@@ -11,6 +11,8 @@ a {
     border-right: solid 1px var(--border);
 
   }
+
+
   
   .logo {
     display: flex;
@@ -22,12 +24,17 @@ a {
   .logo :hover {
     color: #2096f3;
   }
+
   
   .logo img {
     width: 40px;
     height: 40px;
     border-radius: 50%;
     margin-right: 10px;
+  }
+
+  .second-section{
+      margin-left: 15px;
   }
   
   aside h2 {
