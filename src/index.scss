@@ -1,0 +1,137 @@
+:root {
+  --border: #e0e0e0;
+  --primary: #607d8b;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  display: flex;
+}
+
+.side-bar {
+  width: 350px;
+  height: 100vh;
+  border: 1px solid var(--border);
+  padding: 30px 40px 30px 40px;
+  .logo {
+    width: 40px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    h1 {
+      font-size: 24px;
+      font-weight: 400;
+    }
+    a {
+      text-decoration: none;
+      color: black;
+      &:hover {
+        color: #0099e5;
+      }
+    }
+  }
+}
+
+.second-section {
+  margin-left: 15px;
+  .description {
+    margin: 30px 0 20px;
+    line-height: 1.5;
+    color: var(--primary);
+    font-size: 14px;
+  }
+  nav {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 20px;
+    a,
+    button {
+      text-decoration: none;
+      color: black;
+      font-weight: 600;
+      margin-bottom: 20px;
+      border: none;
+      font-size: 15px;
+      background: none;
+      padding-left: 0;
+
+      &:hover {
+        color: #0099e5;
+        cursor: pointer;
+      }
+    }
+
+    li {
+      margin: 0.5rem 0;
+    }
+  }
+  .skillshare {
+    display: block;
+    margin-top: 20px;
+    padding-bottom: 20px;
+    font-size: 14px;
+    border-bottom: solid 1px var(--border);
+
+    span {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 16px;
+      color: #263238;
+    }
+    a {
+      text-decoration: none;
+      line-height: 1.4;
+      font-size: 13px;
+      color: var(--primary);
+      &:hover {
+        color: #0099e5;
+      }
+    }
+  }
+}
+
+.content {
+  flex: 1;
+  overflow: auto;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  max-width: 720px;
+  height: 300px;
+  margin: auto;
+  background: white;
+  z-index: 99;
+  box-shadow: 0 10px 60px rgb(0 0 0 / 10%);
+}
+
+.modal-close {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  padding: 3px;
+  height: 30px;
+  width: 30px;
+  background-color: #f3f4f7;
+  border: none;
+  cursor: pointer;
+}

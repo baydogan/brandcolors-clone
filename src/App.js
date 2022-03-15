@@ -1,11 +1,12 @@
-import Sidebar from "./components/SideBar/SideBar";
-import Searchbar from "./components/SearchBar/SearchBar";
+import Sidebar from "./components/SideBar";
+
+import Content from "./components/Content";
 function App() {
   return (
-    <>
-      <Searchbar />
+    <div className="wrapper">
       <Sidebar />
-    </>
+      <Content />
+    </div>
   );
 }
 
