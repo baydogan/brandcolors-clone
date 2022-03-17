@@ -3,14 +3,14 @@ import Brand from "./Brand";
 import { useBrandsContext } from "../hooks/useBrandsContext";
 
 const Content = () => {
-  const { brandCollection } = useBrandsContext();
-  console.log(brandCollection);
+  const { brandsList } = useBrandsContext();
+  console.log(brandsList);
 
   return (
     <div className="content">
       <Searchbar />
       <div className="brands">
-        {brandCollection.map((brand, index) => (
+        {brandsList.map((brand, index) => (
           <Brand key={index} props={brand} />
         ))}
       </div>

@@ -3,8 +3,7 @@ import { getContrastYIQ } from "../helpers/index";
 import { useState, useRef } from "react";
 
 const Brand = ({ props }) => {
-  const [isShow, setShow] = useState(false);
-  const buttonRef = useRef(null);
+  const [isShow, setShow] = useState(-1);
   return (
     <div className="brand">
       <h1>{props.title}</h1>
@@ -13,10 +12,11 @@ const Brand = ({ props }) => {
           <li key={index}>
             <button
               style={{ backgroundColor: `#${color}`, "--textColor": `${getContrastYIQ(color)}` }}
-              onMouseEnter={() => setShow(true)}
-              onMouseLeave={() => setShow(false)}
+              onMouseEnter={() => setShow(index)}
+              onMouseLeave={() => setShow(-1)}
             >
-              <span>{isShow && <MdOutlineContentCopy />}</span>
+              <span>{isShow == index && <MdOutlineContentCopy className="copy-icon" />}</span>
+              <span className="color-hex">{color}</span>
             </button>
           </li>
         ))}
