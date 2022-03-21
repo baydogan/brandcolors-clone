@@ -182,7 +182,7 @@ code {
   padding-bottom: 1px;
 }
 
-.color-hex{
+.color-hex {
   display: none;
 }
 
@@ -210,4 +210,17 @@ code {
   background-color: #f3f4f7;
   border: none;
   cursor: pointer;
+}
+
+.notification {
+  position: fixed;
+  padding: 15px;
+  background: rgba(38, 50, 56, 0.75);
+  color: white;
+  transition: ease 2s;
+  z-index: 20;
+  right: 20px;
+  bottom: 15px;
+  width: 250px;
+  text-align: center;
 }

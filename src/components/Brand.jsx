@@ -1,8 +1,9 @@
 import { MdOutlineContentCopy } from "react-icons/md";
 import { getContrastYIQ } from "../helpers/index";
-import { useState, useRef } from "react";
+import { useState } from "react";
+import { CopyToClipboard } from "react-copy-to-clipboard";
 
-const Brand = ({ props }) => {
+const Brand = ({ props, handleCopy }) => {
   const [isShow, setShow] = useState(-1);
   return (
     <div className="brand">
@@ -10,14 +11,17 @@ const Brand = ({ props }) => {
       <ul>
         {props.colors.map((color, index) => (
           <li key={index}>
-            <button
-              style={{ backgroundColor: `#${color}`, "--textColor": `${getContrastYIQ(color)}` }}
-              onMouseEnter={() => setShow(index)}
-              onMouseLeave={() => setShow(-1)}
-            >
-              <span>{isShow == index && <MdOutlineContentCopy className="copy-icon" />}</span>
-              <span className="color-hex">{color}</span>
-            </button>
+            <CopyToClipboard text={color}>
+              <button
+                style={{ backgroundColor: `#${color}`, "--textColor": `${getContrastYIQ(color)}` }}
+                onMouseEnter={() => setShow(index)}
+                onMouseLeave={() => setShow(-1)}
+                onClick={() => handleCopy(color)}
+                
+              >
+                <span>{isShow == index && <MdOutlineContentCopy className="copy-icon" />}</span>
+              </button>
+            </CopyToClipboard>
           </li>
         ))}
       </ul>
