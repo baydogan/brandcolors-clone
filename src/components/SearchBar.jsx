@@ -9,7 +9,7 @@ const Searchbar = ({ handleChange, search, clearSearch }) => {
       <div className="header">
         <div className="header__toolbar-search">
           <GrSearch style={{ position: "absolute", width: "18px", height: "18px" }} />
-          <input value={search} onChange={handleChange} type="text" placeholder="Search Brands" />
+          <input className="search" value={search} onChange={handleChange} type="text" placeholder="Search Brands" />
           {search.length > 0 && <GrFormClose onClick={clearSearch} style={{ width: "18px", height: "18px" }} />}
         </div>
         <div className="toolbar-group"></div>

@@ -3,6 +3,7 @@ import Brand from "./Brand";
 import Notification from "./Notification";
 import { useBrandsContext } from "../hooks/useBrandsContext";
 import { useEffect, useState, useMemo } from "react";
+import Sticky from "react-sticky-el";
 
 const Content = () => {
   const { brandsList, copied, setCopied } = useBrandsContext();
@@ -42,7 +43,9 @@ const Content = () => {
 
   return (
     <div className="content">
-      <Searchbar search={search} handleChange={handleChange} clearSearch={clearSearch} />
+      <Sticky>
+        <Searchbar search={search} handleChange={handleChange} clearSearch={clearSearch} />
+      </Sticky>
       {copied.copied && <Notification props={copied} setCopied={setCopied} />}
       <div className="brands">
         {filteredBrandList.map((brand, index) => (
