@@ -12,6 +12,10 @@ const Content = () => {
     setSearch(e.target.value);
   };
 
+  const clearSearch = () => {
+    setSearch("");
+  };
+
   const handleCopy = (color) => {
     setCopied({
       value: color,
@@ -28,7 +32,7 @@ const Content = () => {
         });
       }
     }, 2000);
-  }, [copied]);
+  }, [copied.copied]);
 
   const filteredBrandList = useMemo(() =>
     brandsList.filter((brand) => {
@@ -38,7 +42,7 @@ const Content = () => {
 
   return (
     <div className="content">
-      <Searchbar search={search} handleChange={handleChange} />
+      <Searchbar search={search} handleChange={handleChange} clearSearch={clearSearch} />
       {copied.copied && <Notification props={copied} setCopied={setCopied} />}
       <div className="brands">
         {filteredBrandList.map((brand, index) => (

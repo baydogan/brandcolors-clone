@@ -1,5 +1,5 @@
 import Logo from "../assets/img/brandcolors.jpeg";
-import Modal from './Modal'
+import Modal from "./Modal";
 import { useToggle } from "../hooks/useToggle";
 
 const Sidebar = () => {
@@ -9,29 +9,29 @@ const Sidebar = () => {
   };
   return (
     <div className="side-bar">
-      <div className="logo">
-        <img className="logo" src={Logo} alt="" />
-        <h1>
+      <div className="side-bar__logo-group">
+        <img className="side-bar__logo-group--logo" src={Logo} alt="" />
+        <h1 className="side-bar__logo-group--title">
           <a href="">
             Brand<strong>Colors</strong>
           </a>
         </h1>
       </div>
-      <div className="second-section">
-        <div className="description">
+      <div className="side-bar__second-section">
+        <div className="side-bar__second-section--description">
           The biggest collection of official brand color codes around. Curated by @brandcolors and friends.
         </div>
-        <nav>
+        <div className="side-bar__second-section--navigation">
           <ul>
             <li>
               <a href="">Suggest a Brand</a>
             </li>
             <li>
-             <button onClick={setIsOpen}>About BrandColors</button>
+              <button onClick={setIsOpen}>About BrandColors</button>
             </li>
           </ul>
-        </nav>
-        <div className="skillshare">
+        </div>
+        <div className="side-bar__second-section--skillshare">
           <a href="">
             <span>
               Brand<strong>Colors</strong> + DesignBombs
