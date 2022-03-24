@@ -119,10 +119,8 @@ code {
 
 .header {
   display: flex;
-  position: sticky;
   height: 55px;
   border-bottom: 1px solid var(--border);
-  z-index: 999;
   background-color: white;
   align-items: center;
   justify-content: space-between;
@@ -145,10 +143,10 @@ code {
   }
 }
 
-.brands {
+.brands-list {
   display: flex;
   flex-direction: column;
-  .brand {
+  &__brand {
     padding: 15px 0;
     margin-left: 15px;
     border-bottom: solid 1px var(--border);

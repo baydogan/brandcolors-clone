@@ -40,7 +40,7 @@ const Sidebar = () => {
             website with WordPress.
           </a>
         </div>
-        {isOpen && <Modal closeModal={handleCloseModal} />}
+        {isOpen && <Modal closeModal={handleCloseModal} isOpen={isOpen} />}
       </div>
     </div>
   );
