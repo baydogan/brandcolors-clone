@@ -3,11 +3,10 @@ import { getContrastYIQ } from "../helpers/index";
 import { useState, useEffect } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { useBrandsContext } from "../hooks/useBrandsContext";
-import { Link } from "react-router-dom";
 
-const Brand = ({ props, handleCopy }) => {
+const Brand = ({ props }) => {
   const [isShow, setShow] = useState(-1);
-  const { selected, setSelected } = useBrandsContext();
+  const { selected, setSelected, copied, setCopied } = useBrandsContext();
 
   const handleSelect = () => {
     if (selected.includes(props)) {
@@ -17,18 +16,20 @@ const Brand = ({ props, handleCopy }) => {
     }
   };
 
-  useEffect(() => {
-    console.log(selected);
-  }, [selected]);
+  const handleCopy = (color) => {
+    setCopied({
+      value: color,
+      copied: true,
+    });
+  };
 
   return (
     <div
-      className={`brands-list__brand ${selected.includes(props) ? "brands-list__brand-selected" : ""}`}
       onClick={handleSelect}
+      className={`brands-list__brand ${selected.includes(props) ? "brands-list__brand-selected" : ""}`}
     >
       <div className="brands-list__brand--link">
         <h1>{props.title}</h1>
-        <div></div>
       </div>
 
       {props.colors.map((color, index) => (
@@ -48,12 +49,6 @@ const Brand = ({ props, handleCopy }) => {
           </button>
         </CopyToClipboard>
       ))}
-
-      {/* {props.colors.map((color, index) => (
-           key={index}>
-            
-         
-        ))} */}
     </div>
   );
 };

@@ -17,13 +17,6 @@ const Content = () => {
     setSearch("");
   };
 
-  const handleCopy = (color) => {
-    setCopied({
-      value: color,
-      copied: true,
-    });
-  };
-
   useEffect(() => {
     setTimeout(() => {
       if (copied.copied) {
@@ -49,7 +42,7 @@ const Content = () => {
       {copied.copied && <Notification props={copied} setCopied={setCopied} />}
       <div className="brands-list">
         {filteredBrandList.map((brand, index) => (
-          <Brand key={index} props={brand} handleCopy={handleCopy} onClick={() => console.log(brand)} />
+          <Brand key={index} props={brand} onClick={() => console.log(brand)} />
         ))}
       </div>
     </div>

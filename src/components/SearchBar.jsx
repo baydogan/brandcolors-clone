@@ -8,8 +8,8 @@ const Searchbar = ({ handleChange, search, clearSearch }) => {
   const { selected, setSelected } = useBrandsContext();
 
   const clearSelected = () => {
-    setSelected([])
-  }
+    setSelected([]);
+  };
   return (
     <>
       <div className="header">
@@ -22,9 +22,8 @@ const Searchbar = ({ handleChange, search, clearSearch }) => {
           <IoMdDownload className="header__toolbar-group--icons" />
           <IoMdLink className="header__toolbar-group--icons" />
           <GrFormClose onClick={clearSelected} className="header__toolbar-group--icons" />
-          <span>{selected.length} brands collected</span>
-          |
-          <IoMdDownload className="header__toolbar-group--icons" />
+          <span>{selected.length} brands collected</span>|
+          <IoMdDownload select className="header__toolbar-group--icons" />
           <span>All Brands</span>
         </div>
       </div>
