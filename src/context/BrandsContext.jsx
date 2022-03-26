@@ -14,5 +14,10 @@ export const BrandsProvider = ({ children }) => {
     value: null,
     copied: false,
   });
-  return <BrandsContext.Provider value={{ brandsList, copied, setCopied }}>{children}</BrandsContext.Provider>;
+  const [selected, setSelected] = useState([]);
+  return (
+    <BrandsContext.Provider value={{ brandsList, copied, setCopied, selected, setSelected }}>
+      {children}
+    </BrandsContext.Provider>
+  );
 };

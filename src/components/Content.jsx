@@ -9,7 +9,6 @@ const Content = () => {
   const { brandsList, copied, setCopied } = useBrandsContext();
   const [search, setSearch] = useState("");
 
-
   const handleChange = (e) => {
     setSearch(e.target.value);
   };
@@ -25,7 +24,6 @@ const Content = () => {
     });
   };
 
-
   useEffect(() => {
     setTimeout(() => {
       if (copied.copied) {
@@ -36,7 +34,6 @@ const Content = () => {
       }
     }, 2000);
   }, [copied.copied]);
-
 
   const filteredBrandList = useMemo(() =>
     brandsList.filter((brand) => {
@@ -49,10 +46,10 @@ const Content = () => {
       <Sticky>
         <Searchbar search={search} handleChange={handleChange} clearSearch={clearSearch} />
       </Sticky>
-      {copied.copied && <Notification props={copied} setCopied={setCopied}  />}
-      <div className="brands-list" >
+      {copied.copied && <Notification props={copied} setCopied={setCopied} />}
+      <div className="brands-list">
         {filteredBrandList.map((brand, index) => (
-          <Brand key={index} props={brand} handleCopy={handleCopy} />
+          <Brand key={index} props={brand} handleCopy={handleCopy} onClick={() => console.log(brand)} />
         ))}
       </div>
     </div>
